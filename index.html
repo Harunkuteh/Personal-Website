@@ -2,30 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A startup website for showcasing projects and skills."> <!-- อธิบายเนื้อหาของเว็บไซต์ -->
-    <meta name="keywords" content="HTML, CSS, Startup, Portfolio, Projects"> <!-- กำหนดคำค้นหาที่เกี่ยวข้อง -->
+    <meta name="description" content="It was created to present an online presence so that this space can be used to display information.."> 
+    <meta name="keywords" content="HTML, CSS, Home, About Me, Portfolio, Resume, Skills, Contacts"> 
     <meta name="author" content="Harun Kuteh"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Portfolio</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
+            background-color: #bacdda;
             color: #333;
         }
+        h1 {
+            font-size: 2em;
+        }
         header {
-            background-color: #f7faff;
-            padding: 10px 20px;
+            background-color: #eff0f2;
+            padding: 10px 50px; /* เพิ่ม padding เพื่อเพิ่มพื้นที่ให้ header */
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 2px solid #ddd;
+            border-bottom: 5px solid #519ce1;
         }
         header nav {
             display: flex;
-            gap: 20px;
+            gap: 40px; /* เพิ่มระยะห่างระหว่างเมนู */
         }
         header nav a {
             text-decoration: none;
@@ -36,30 +39,36 @@
             gap: 5px;
         }
         .container {
-            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: left;
             padding: 40px 20px;
+            gap: 30px;
         }
         .container h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
+            font-size: 5em;
+            margin-bottom: 20px;
+            margin-top: -20px; /* เลื่อนข้อความขึ้น */
         }
         .container p {
             font-size: 1.2em;
             margin: 10px 0;
         }
         .profile-image {
-            margin-top: 20px;
+            flex-shrink: 0; /* Prevent the image from shrinking */
+            margin-top: 0px; /* เลื่อนรูปภาพลงมานิดหน่อย */
         }
         .profile-image img {
             max-width: 200px;
-            border-radius: 50%;
+            border-radius: 10%;
         }
     </style>
 </head>
 <body>
     <header>
         <div class="logo">
-            <h2>Home</h2>
+            <h1>Home</h1>
         </div>
         <nav>
             <a href="#about"><span>About Me</span></a>
@@ -70,12 +79,14 @@
         </nav>
     </header>
     <div class="container">
-        <h1>Hi, I'm Harun Kuteh</h1>
-        <p>I'm a second-year student in Information and Technology.</p>
-        <p>I'm passionate about media and graphic design.</p>
-        <p>My goal is to use technology to craft engaging and meaningful projects.</p>
         <div class="profile-image">
             <img src="https://assets.onecompiler.app/433gecjsy/433gebrrc/unnamed.png" alt="Harun Kuteh">
+        </div>
+        <div class="text-content">
+            <h1>Hi, I'm Harun Kuteh</h1>
+            <p>I'm a second-year student in Information and Technology.</p>
+            <p>I'm passionate about media and graphic design.</p>
+            <p>My goal is to use technology to craft engaging and meaningful projects.</p>
         </div>
     </div>
 </body>
