@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="It was created to present an online presence so that this space can be used to display information.."> 
+    <meta name="description" content="It was created to present an online presence so that this space can be used to display information."> 
     <meta name="keywords" content="HTML, CSS, Home, About Me, Portfolio, Resume, Skills, Contacts"> 
     <meta name="author" content="Harun Kuteh"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,82 +12,162 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #bacdda;
+            background-color: #519ce1;
             color: #333;
-        }
-        h1 {
-            font-size: 2em;
         }
         header {
             background-color: #eff0f2;
-            padding: 10px 50px; /* เพิ่ม padding เพื่อเพิ่มพื้นที่ให้ header */
+            padding: 10px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             border-bottom: 5px solid #519ce1;
-        }
-        header nav {
-            display: flex;
-            gap: 40px; /* เพิ่มระยะห่างระหว่างเมนู */
+            flex-wrap: wrap;
         }
         header nav a {
             text-decoration: none;
             color: #333;
             font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 5px;
+            padding: 5px 10px;
+        }
+        header nav a:hover {
+            background-color: #519ce1;
+            color: #fff;
+            border-radius: 5px;
+        }
+        section {
+            padding: 20px;
+            margin: 20px;
+            border: 2px solid #519ce1;
+            border-radius: 10px;
+            background-color: #fff;
         }
         .container {
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: left;
-            padding: 40px 20px;
-            gap: 30px;
+            flex-wrap: wrap;
+            gap: 20px;
         }
         .container h1 {
-            font-size: 5em;
-            margin-bottom: 20px;
-            margin-top: -20px; /* เลื่อนข้อความขึ้น */
+            font-size: 2em;
+            text-align: center;
         }
         .container p {
-            font-size: 1.2em;
-            margin: 10px 0;
+            font-size: 1em;
+            text-align: center;
         }
-        .profile-image {
-            flex-shrink: 0; /* Prevent the image from shrinking */
-            margin-top: 0px; /* เลื่อนรูปภาพลงมานิดหน่อย */
+        .blue-text {
+            color: #519ce1;  /* Set the text color to blue */
+            font-weight: bold;
         }
         .profile-image img {
-            max-width: 200px;
+            max-width: 150px;
             border-radius: 10%;
+        }
+
+        /* Responsive design */
+        @media (min-width: 768px) {
+            header {
+                padding: 10px 50px;
+            }
+            header nav {
+                gap: 40px;
+            }
+            .container h1 {
+                font-size: 3em;
+            }
+            .container p {
+                font-size: 1.2em;
+            }
+            .profile-image img {
+                max-width: 200px;
+            }
+        }
+        @media (min-width: 1024px) {
+            .container h1 {
+                font-size: 5em;
+            }
+            .container p {
+                font-size: 1.2em;
+            }
+            .profile-image img {
+                max-width: 250px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <div class="logo">
-            <h1>Home</h1>
+            <h1>Harun Kuteh</h1>
         </div>
         <nav>
-            <a href="#about"><span>About Me</span></a>
-            <a href="#portfolio"><span>Portfolio</span></a>
-            <a href="#resume"><span>Resume</span></a>
-            <a href="#skills"><span>Skills</span></a>
-            <a href="#contacts"><span>Contacts</span></a>
+            <a href="#home">Home</a>
+            <a href="#about">About Me</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#skills">Skills</a>
+            <a href="#contacts">Contacts</a>
         </nav>
     </header>
-    <div class="container">
-        <div class="profile-image">
-            <img src="https://assets.onecompiler.app/433gecjsy/433gebrrc/unnamed.png" alt="Harun Kuteh">
+
+    <!-- Section Home -->
+    <section id="home">
+        <div class="container">
+            <div class="profile-image">
+                <img src="https://assets.onecompiler.app/433gecjsy/433gebrrc/unnamed.png" alt="Harun Kuteh">
+            </div>
+            <div class="text-content">
+                <h1>
+                    <span style="font-size: 1em; font-weight: normal;">Hello, I'm</span> 
+                    <span style="font-size: 1em; font-weight: bold;">Harun Kuteh</span>
+                </h1>
+                <p class="blue-text">I'm a second-year student in Information and Technology.</p>
+                <p class="blue-text">I'm passionate about media and graphic design.</p>
+                <p class="blue-text">My goal is to use technology to craft engaging and meaningful projects.</p>
+            </div>
         </div>
-        <div class="text-content">
-            <h1>Hi, I'm Harun Kuteh</h1>
-            <p>I'm a second-year student in Information and Technology.</p>
-            <p>I'm passionate about media and graphic design.</p>
-            <p>My goal is to use technology to craft engaging and meaningful projects.</p>
-        </div>
-    </div>
+    </section>   
+
+    <!-- Section About Me -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>My name is Harun Kuteh, and I am a creative individual with a strong focus on media and design. I love bringing ideas to life through technology.</p>
+    </section>
+
+    <!-- Placeholder for Portfolio Section -->
+    <section id="portfolio">
+        <h2>Portfolio</h2>
+        <p>Here is an example of my previous works. (Add details or links to your projects)</p>
+    </section> 
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <p>List your technical and non-technical skills here.</p>
+    </section>
+
+    <section id="contacts">
+        <h2>Contacts</h2>
+        <p>Include your contact details or a form for people to reach out to you.</p>
+        
+    
+    <script>
+        const texts = [
+            "I'm a second-year student in Information and Technology.",
+            "I'm passionate about media and graphic design.",
+            "My goal is to use technology to craft engaging and meaningful projects."
+        ];
+    
+        let currentIndex = 0;
+    
+        function updateText() {
+            const textElement = document.getElementById('dynamic-text');
+            textElement.textContent = texts[currentIndex];
+            currentIndex = (currentIndex + 1) % texts.length;
+        }
+    
+        setInterval(updateText, 3000);
+    </script>
+    </section>
 </body>
 </html>
