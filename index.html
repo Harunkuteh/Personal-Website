@@ -65,7 +65,26 @@
             max-width: 150px;
             border-radius: 10%;
         }
-
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .skill {
+            text-align: center;
+        }
+        .skill img {
+            max-width: 100px;
+            margin-bottom: 10px;
+            border-radius: 10%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .skill img:hover {
+            transform: scale(1.2) rotate(5deg);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
         /* Responsive design */
         @media (min-width: 768px) {
             header {
@@ -132,42 +151,65 @@
     <!-- Section About Me -->
     <section id="about">
         <h2>About Me</h2>
-        <p>My name is Harun Kuteh, and I am a creative individual with a strong focus on media and design. I love bringing ideas to life through technology.</p>
+        <p>I am studying at Fatoni University in my second year, Faculty of Science and Technology, majoring in Information and Technology.</p>
+        <p>I hope to be able to develop myself in new technologies and do the best work assigned to me, and find new knowledge to develop myself to be good in all aspects.</p>
+        <P>What I have learned will be successful in the future.</p>
     </section>
 
-    <!-- Placeholder for Portfolio Section -->
+    <!-- Section Portfolio -->
     <section id="portfolio">
         <h2>Portfolio</h2>
         <p>Here is an example of my previous works. (Add details or links to your projects)</p>
     </section> 
 
+    <!-- Section Skills -->
     <section id="skills">
         <h2>Skills</h2>
-        <p>List your technical and non-technical skills here.</p>
+        <div class="skills-grid">
+            <div class="skill">
+                <img src="https://assets.onecompiler.app/4362hwp5b/4362hwrve/images.jpg" alt="Canva">
+                <p>Canva</p>
+            </div>
+            <div class="skill">
+                <img src="https://assets.onecompiler.app/4362hwp5b/4362hwrve/MySQL-%E0%B8%84%E0%B8%B7%E0%B8%AD%E0%B8%AD%E0%B8%B0%E0%B9%84%E0%B8%A3.png" alt="MySQL">
+                <p>MySQL</p>
+            </div>
+            <div class="skill">
+                <img src="https://assets.onecompiler.app/4362hwp5b/4362hwrve/Adobe_Illustrator_CC_icon.svg.png" alt="Illustrator">
+                <p>Illustrator</p>
+            </div>
+            <div class="skill">
+                <img src="https://assets.onecompiler.app/4362hwp5b/4362hwrve/NoXF16100.jpg" alt="Premiere Pro">
+                <p>Premiere Pro</p>
+            </div>
+            <div class="skill">
+                <img src="https://assets.onecompiler.app/4362hwp5b/4362hwrve/Adobe_After_Effects_CC_icon.svg.png" alt="After Effects">
+                <p>After Effects</p>
+            </div>
+            <div class="skill">
+                <img src="https://assets.onecompiler.app/4362hwp5b/4362hwrve/images.png" alt="Photoshop">
+                <p>Photoshop</p>
+            </div>
+            <div class="skill">
+                <img src="https://assets.onecompiler.app/4362hwp5b/4362hwrve/images%20(1).png" alt="Capcut">
+                <p>Capcut</p>
+            </div>
+            <div class="skill">
+                <img src="https://assets.onecompiler.app/4362hwp5b/4362hwrve/images%20(2).png" alt="CSS">
+                <p>CSS</p>
+            </div>
+            <div class="skill">
+                <img src="https://assets.onecompiler.app/4362hwp5b/4362hwrve/images%20(3).png" alt="JavaScript">
+                <p>JavaScript</p>
+            </div>
+        </div>
     </section>
 
+    <!-- Section Contacts -->
     <section id="contacts">
         <h2>Contacts</h2>
         <p>Include your contact details or a form for people to reach out to you.</p>
-        
-    
-    <script>
-        const texts = [
-            "I'm a second-year student in Information and Technology.",
-            "I'm passionate about media and graphic design.",
-            "My goal is to use technology to craft engaging and meaningful projects."
-        ];
-    
-        let currentIndex = 0;
-    
-        function updateText() {
-            const textElement = document.getElementById('dynamic-text');
-            textElement.textContent = texts[currentIndex];
-            currentIndex = (currentIndex + 1) % texts.length;
-        }
-    
-        setInterval(updateText, 3000);
-    </script>
     </section>
+    
 </body>
 </html>
