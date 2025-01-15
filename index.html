@@ -64,7 +64,34 @@
         .profile-image img {
             max-width: 150px;
             border-radius: 10%;
+            
         }
+        
+        /* Portfolio Section */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+.portfolio-item {
+    text-align: center;
+    background-color: #fff;
+    border: 2px solid #519ce1;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.portfolio-item img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.portfolio-item p {
+    font-size: 1em;
+    color: #333;
+}
+
         /* Skills Section */
         .skills-grid {
             display: grid;
@@ -85,6 +112,41 @@
             transform: scale(1.2) rotate(5deg);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
+        /* Contact Details Section */
+.contact-details {
+    margin-bottom: 20px;
+}
+.contact-details p {
+    font-size: 1.2em;
+    color: #333;
+}
+
+.contact-form {
+    background-color: #fff;
+    padding: 20px;
+    border: 2px solid #519ce1;
+    border-radius: 10px;
+}
+.contact-form label {
+    font-size: 1em;
+    color: #333;
+}
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.contact-form input[type="submit"] {
+    background-color: #519ce1;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+.contact-form input[type="submit"]:hover {
+    background-color: #4176b1;
+}
         /* Responsive design */
         @media (min-width: 768px) {
             header {
@@ -156,11 +218,27 @@
         <P>What I have learned will be successful in the future.</p>
     </section>
 
-    <!-- Section Portfolio -->
-    <section id="portfolio">
-        <h2>Portfolio</h2>
-        <p>Here is an example of my previous works. (Add details or links to your projects)</p>
-    </section> 
+   <!-- Section Portfolio -->
+<section id="portfolio">
+    <h2>Portfolio</h2>
+    <p>Here is an example of my previous works. (Add details or links to your projects)</p>
+    
+    <div class="portfolio-grid">
+        <div class="portfolio-item">
+            <img src="https://via.placeholder.com/300" alt="Project 1">
+            <p><strong>Project 1:</strong> Description of the project, what technologies were used, and the goal of the project.</p>
+        </div>
+        <div class="portfolio-item">
+            <img src="https://via.placeholder.com/300" alt="Project 2">
+            <p><strong>Project 2:</strong> Description of the project, what technologies were used, and the goal of the project.</p>
+        </div>
+        <div class="portfolio-item">
+            <img src="https://via.placeholder.com/300" alt="Project 3">
+            <p><strong>Project 3:</strong> Description of the project, what technologies were used, and the goal of the project.</p>
+        </div>
+    </div>
+</section>
+ 
 
     <!-- Section Skills -->
     <section id="skills">
@@ -171,7 +249,7 @@
                 <p>Canva</p>
             </div>
             <div class="skill">
-                <img src="https://assets.onecompiler.app/4362hwp5b/4362hwrve/MySQL-%E0%B8%84%E0%B8%B7%E0%B8%AD%E0%B8%AD%E0%B8%B0%E0%B9%84%E0%B8%A3.png" alt="MySQL">
+                <img src="https://assets.onecompiler.app/4362hwp5b/4362hwrve/mysql-com-icon.avif" alt="MySQL">
                 <p>MySQL</p>
             </div>
             <div class="skill">
@@ -205,11 +283,37 @@
         </div>
     </section>
 
-    <!-- Section Contacts -->
-    <section id="contacts">
-        <h2>Contacts</h2>
-        <p>Include your contact details or a form for people to reach out to you.</p>
-    </section>
+  <!-- Section Contacts -->
+<section id="contacts">
+    <h2>Contacts</h2>
+    
+    <p>If you'd like to get in touch with me, feel free to reach out through the contact information below or send a message using the form.</p>
+
+    <!-- Contact Details -->
+    <div class="contact-details">
+        <p><strong>Name:</strong> Harun Kuteh</p>
+        <p><strong>Phone:</strong> +123 456 7890</p>
+        <p><strong>Email:</strong> harun@example.com</p>
+    </div>
+
+    <!-- Contact Form (Optional) -->
+    <div class="contact-form">
+        <h3>Contact Form</h3>
+        <form action="#" method="POST">
+            <label for="name">Your Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="email">Your Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="message">Your Message:</label><br>
+            <textarea id="message" name="message" rows="4" required></textarea><br><br>
+
+            <input type="submit" value="Send Message">
+        </form>
+    </div>
+</section>
+
     
 </body>
 </html>
