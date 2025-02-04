@@ -1,0 +1,257 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #519ce1;
+    color: #333;
+}
+header {
+    background-color: #eff0f2;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 4px solid #519ce1;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* ป้องกันไม่ให้ header บัง section */
+section {
+    padding: 20px;
+    margin: 20px;
+    border: 2px solid #519ce1;
+    border-radius: 10px;
+    background-color: #fff;
+    scroll-margin-top: 160px;
+}
+
+/* ทำให้เมนูคลิกแล้วเลื่อนนุ่มนวล */
+html {
+    scroll-behavior: smooth;
+}
+
+header nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 10px 10px;
+    font-size: 1.5em;
+}
+
+header nav a:hover {
+    background-color: #519ce1;
+    color: #fff;
+    border-radius: 5px;
+}
+
+h1, h2 {
+    font-size: 3em; 
+    text-align: center;
+}
+
+.black-text {
+    color: black;
+}
+
+.blue-text {
+    color: #519ce1;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.profile-image img {
+    max-width: 150px;
+    border-radius: 10%;
+}
+
+.container-about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 0; /* ขยับลง 5% ของความสูงหน้าจอ */
+    margin-right: 40%; /* ขยับไปทางขวา 10% ของความกว้าง */
+}
+h3 {
+    text-align: center;
+    justify-content: center;
+    margin-right: 55%; /* ขยับไปทางขวา 10% */
+    font-size: 28px; /* ปรับขนาดใหญ่ขึ้น */
+}
+.blue-about{
+    font-weight: bold;
+    color: #519ce1;
+}
+
+.icon-text {
+    font-weight: bold; /* ทำให้ตัวหนังสือหนา */
+    font-size: 15px; /* ปรับขนาด */
+    line-height: 0.5; /* ลดระยะห่างของข้อความ */
+}
+
+.text-motto {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0; /* เอาระยะห่างออก */
+}
+
+.text-motto p {
+    margin-bottom: 0; /* ลบระยะห่างของแต่ละบรรทัด */
+    line-height: 1; /* ลดระยะห่างของข้อความ */
+    font-weight: bold;
+}
+.about-image img {
+    max-width: 150px;
+    border-radius: 10%;
+    margin-left: 150%; /* ขยับไปทางขวา */
+    margin-top: -50px; /* ขยับขึ้นบน */
+}
+
+
+.portfolio-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.portfolio-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+    max-width: 320px;
+    border: 2px solid #4d55be;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.portfolio-item img {
+    width: 80%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Skills Section */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+.skill {
+    text-align: center;
+}
+.skill img {
+    max-width: 100px;
+    margin-bottom: 10px;
+    border-radius: 10%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.skill img:hover {
+    transform: scale(1.2) rotate(5deg);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.contact-form {
+    background-color: #fff;
+    padding: 20px;
+    border: 2px solid #519ce1;
+    border-radius: 10px;
+}
+
+.contact-form label {
+    font-size: 1em;
+    color: #333;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.contact-form input[type="submit"] {
+    background-color: #519ce1;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.contact-form input[type="submit"]:hover {
+    background-color: #4176b1;
+}
+
+/* Visitor Counter */
+.visitor-counter {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    background: #f1c40f;
+    color: #000;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+/* Go to Top Button */
+#goTopBtn {
+    position: fixed;
+    bottom: 25px;
+    right: 30px;
+    background: #d8db34;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+}
+
+/* Responsive design */
+@media (min-width: 768px) {
+    header {
+        padding: 10px 50px;
+    }
+
+    .container h1 {
+        font-size: 3em;
+    }
+
+    .profile-image img {
+        max-width: 200px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container h1 {
+        font-size: 5em;
+    }
+
+    .profile-image img {
+        max-width: 250px;
+    }
+}

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
++<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,274 +7,7 @@
     <meta name="author" content="Harun Kuteh"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Portfolio</title>
-    
-    <style>
-
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #519ce1;
-            color: #333;
-}
-    header {
-        background-color: #eff0f2;
-        padding: 10px 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 4px solid #519ce1; /* ลดขนาดขอบให้เล็กลง */
-        flex-wrap: wrap;
-        position: sticky;
-        top: 0;
-        z-index: 1000; /* เพิ่มค่า z-index ให้ header อยู่บนสุด */
-}
-
-    /* ป้องกันไม่ให้ header บัง section */
-    section {
-        padding: 20px;
-        margin: 20px;
-        border: 2px solid #519ce1;
-        border-radius: 10px;
-        background-color: #fff;
-        scroll-margin-top: 160px; /* ปรับให้หัวข้อเลื่อนแล้วไม่ถูก header บัง */
-    }
-
-    /* ทำให้เมนูคลิกแล้วเลื่อนนุ่มนวล */
-    html {
-        scroll-behavior: smooth;
-}
-        
-    header nav a {
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-            padding: 10px 10px;
-            font-size: 1.5em;
-}
-     header nav a:hover {
-            background-color: #519ce1;
-            color: #fff;
-            border-radius: 5px;
-}
-
-    h1 {
-        font-size: 3em; /* ปรับขนาดให้ใหญ่ขึ้น */
-        text-align: center; /* จัดให้อยู่ตรงกลาง */
-}
-
-    .black-text {
-        color: black; /* สีดำ */
-}
-    .blue-text {
-         color: #519ce1; /* สีฟ้า */
-}
-       
-    h2 {
-        font-size: 4em; /* ปรับขนาดให้ใหญ่ขึ้น */
-        text-align: center; /* จัดให้อยู่ตรงกลาง */
-}
-
-    .black-text {
-        color: black; /* สีดำ */
-}
-
-    .blue-text {
-        color: #519ce1; /* สีฟ้า */
-}
-
-    section {
-        padding: 20px;
-        margin: 20px;
-        border: 2px solid #519ce1;
-        border-radius: 10px;
-        background-color: #fff;
-}
-    .container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 20px;
-}
-        .container h1 {
-            font-size: 2em;
-            text-align: center;
-        }
-        .container p {
-            font-size: 1em;
-            text-align: center;
-        }
-        .blue-text {
-            color: #519ce1;  /* Set the text color to blue */
-            font-weight: bold;
-        }
-        .profile-image img {
-            max-width: 150px;
-            border-radius: 10%;
-            
-        }
-        
-        .portfolio-grid {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        justify-content: center; /* หรือใช้ justify-content: flex-start; */
-}
-
-    .portfolio-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: justify;
-            max-width: 320px; /* กำหนดความกว้างของบล็อก */
-            border: 2px solid #656ff5; /* เพิ่มกรอบสีเทา */
-            border-radius: 10px; /* มุมกรอบโค้ง */
-            padding: 20px; /* เพิ่มระยะห่างภายในกรอบ */
-            background-color: #f9f9f9; /* เพิ่มสีพื้นหลังอ่อน */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้ดูเด่นขึ้น */
-            transition: transform 0.2s, box-shadow 0.2s; /* เพิ่มเอฟเฟกต์เวลา hover */
-        }
-
-    .portfolio-item:hover {
-        transform: translateY(-10px); /* ยกบล็อกขึ้นเล็กน้อยเมื่อ hover */
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* เพิ่มเงาเมื่อ hover */
-}
-
-    .portfolio-content {
-        margin-top: 10px;
-}
-
-    .portfolio-item img {
-        width: 80%;
-        height: auto;
-        border-radius: 8px; /* ให้ขอบภาพโค้ง */
-        
-}
-    .portfolio-item p {
-        font-size: 1em; /* ปรับขนาดตัวอักษรให้ใหญ่ขึ้น */
-        text-align: justify; /* จัดข้อความให้เป็นระเบียบ */
-}
-
-
-        /* Skills Section */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-        .skill {
-            text-align: center;
-        }
-        .skill img {
-            max-width: 100px;
-            margin-bottom: 10px;
-            border-radius: 10%;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .skill img:hover {
-            transform: scale(1.2) rotate(5deg);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-        }
-
-                /* Contact Details Section */
-        .contact-details {
-            margin-bottom: 20px;
-        }
-        .contact-details p {
-            font-size: 1.2em;
-            color: #333;
-        }
-
-        .contact-form {
-            background-color: #fff;
-            padding: 20px;
-            border: 2px solid #519ce1;
-            border-radius: 10px;
-        }
-        .contact-form label {
-            font-size: 1em;
-            color: #333;
-        }
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            border-radius: 5px;  
-            border: 1px solid #ccc;
-        }
-        .contact-form input[type="submit"] {
-            background-color: #519ce1;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-        }
-        .contact-form input[type="submit"]:hover {
-            background-color: #4176b1;
-        }
-
-      
-/* Visitor Counter */
-.visitor-counter {
-    position: fixed;
-    top: 10px;
-    right: 20px;
-    background: #f1c40f;
-    color: #000; /* เพิ่มสีข้อความ */
-    font-weight: bold;
-    padding: 5px 10px;
-    border-radius: 5px;
-    z-index: 1000; /* ให้แน่ใจว่าอยู่ด้านบน */
-    display: block; /* ตรวจสอบว่าปุ่มไม่ได้ถูกซ่อน */
-}
-
-
-/* Go to Top Button */
-#goTopBtn {
-    position: fixed;
-    bottom: 25px;
-    right: 30px;
-    background: #d8db34;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    display: none;
-}
-
-
-        /* Responsive design */
-        @media (min-width: 768px) {
-            header {
-                padding: 10px 50px;
-            }
-            header nav {
-                gap: 40px;
-            }
-            .container h1 {
-                font-size: 3em;
-            }
-            .container p {
-                font-size: 1.2em;
-            }
-            .profile-image img {
-                max-width: 200px;
-            }
-        }
-        @media (min-width: 1024px) {
-            .container h1 {
-                font-size: 5em;
-            }
-            .container p {
-                font-size: 1.2em;
-            }
-            .profile-image img {
-                max-width: 250px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
@@ -290,12 +23,9 @@
         </nav>
     </header>
 
-    <!-- Visitor Counter -->
     <div id="visitorCounter" class="visitor-counter">Visitors: 0</div>
 
-    <!-- Go to Top Button -->
     <button id="goTopBtn" onclick="scrollToTop()">▲</button>
-
 
     <!-- Section Home -->
     <section id="home">
@@ -304,20 +34,38 @@
                 <img src="https://assets.onecompiler.app/433gecjsy/433gebrrc/unnamed.png" alt="Harun Kuteh">
             </div>
             <div class="text-content">
-                <h1><span class="black-text">Hello,I am</span><span class="blue-text"> Harun Kuteh</span></h2>
+                <h1><span class="black-text">Hello, I am</span><span class="blue-text"> Harun Kuteh</span></h1>
                 <p class="black-text">I'm a second-year student in Information and Technology.</p>
                 <p class="black-text">I'm passionate about media and graphic design.</p>
                 <p class="black-text">My goal is to use technology to craft engaging and meaningful projects.</p>
             </div>
         </div>
+        <br> 
     </section>   
 
-    <!-- Section About Me -->
     <section id="about">
         <h2><span class="black-text">About</span><span class="blue-text"> Me</span></h2>
-        <p>I am studying at Fatoni University in my second year, Faculty of Science and Technology, majoring in Information and Technology.</p>
-        <p>I hope to be able to develop myself in new technologies and do the best work assigned to me, and find new knowledge to develop myself to be good in all aspects.</p>
-        <P>What I have learned will be successful in the future.</p>
+        <h3><span class="black-text">Know</span><span class="blue-text"> Who I'm</span></h3>
+    
+        <div class="container-about">
+            <div class="text-content">
+                <p>Hello everyone, my name is<span class="blue-about"> Harun Kuteh</span> from <span class="blue-about">Thailand, Pattani.</span></p>
+                <p>I am a junior pursuing a bachelor's degree in Information Technology at Fatoni University.</p>
+                <p><br>In addition to coding, there are other activities that I like to do!</p>
+                <ul>
+                    <li> <p class="icon-text">🎬 Video editing</li></p>
+                    <li> <p class="icon-text">🎨 Design</li></p>
+                    <li> <p class="icon-text">🌍 Travelling</li></p>
+                </ul>
+                <div class="text-motto">
+                    <p>My love is like home because in the end...</p>
+                    <p><span class="blue-text"><em>"The right person should make you feel warm, like you are at home"</em></span></p>
+                    <p>- Atom Chankan</p>
+                </div>
+            
+                <br> 
+            </div>
+        </div>
     </section>
 
    <!-- Section Portfolio -->
