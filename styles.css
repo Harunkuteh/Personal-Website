@@ -151,7 +151,7 @@ h1, h2 {
 }
 .portfolio-item:hover {
     transform: translateY(-10px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    filter: drop-shadow(1px 1px 20px #519ce1);
 }
 .portfolio-item img {
     width: 80%;
@@ -178,7 +178,7 @@ h1, h2 {
 }
 .skill img:hover {
     transform: scale(1.2) rotate(5deg);
-    filter: drop-shadow(1px 1px 20px rgb(52, 52, 52));
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .contact-form {
