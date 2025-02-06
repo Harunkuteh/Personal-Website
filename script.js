@@ -29,25 +29,25 @@ function scrollToTop() {
     window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-document.getElementById("contactForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // ป้องกันการส่งฟอร์มปกติ
-    var form = this;
-    fetch(form.action, {
-        method: form.method,
-        body: new FormData(form),
-        headers: {
-            'Accept': 'application/json'
-        }
-    }).then(response => {
-        if (response.ok) {
-            document.getElementById("successMessage").style.display = "block";
-            form.reset(); // รีเซ็ตฟอร์มหลังจากส่งสำเร็จ
-        } else {
-            alert("There was an error. Please try again.");
-        }
-    }).catch(error => {
-        alert("There was an error. Please try again.");
+    document.querySelector("form").addEventListener("submit", function(event) {
+        event.preventDefault(); // ป้องกันการโหลดหน้าใหม่
+
+        fetch(this.action, {
+            method: this.method,
+            body: new FormData(this),
+            headers: { 'Accept': 'application/json' }
+        }).then(response => {
+            if (response.ok) {
+                document.querySelector(".contact-form").innerHTML = `
+                    <h3>ขอบคุณ!</h3>
+                    <p>เราจะติดต่อกลับหาคุณเร็วๆ นี้</p>
+                `;
+            } else {
+                alert("เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง");
+            }
+        }).catch(error => {
+            alert("เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง");
+        });
     });
-});
 
     
