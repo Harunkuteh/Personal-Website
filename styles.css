@@ -28,11 +28,11 @@ section {
     scroll-margin-top: 160px;
 }
 
+
 /* ทำให้เมนูคลิกแล้วเลื่อนนุ่มนวล */
 html {
     scroll-behavior: smooth;
 }
-
 header nav a {
     text-decoration: none;
     color: #333;
@@ -40,18 +40,15 @@ header nav a {
     padding: 10px 10px;
     font-size: 1.5em;
 }
-
 header nav a:hover {
     background-color: #519ce1;
     color: #fff;
     border-radius: 5px;
 }
-
 h1, h2 {
     font-size: 3em; 
     text-align: center;
 }
-
 .black-text {
     color: black;
 }
@@ -59,7 +56,6 @@ h1, h2 {
 .blue-text {
     color: #519ce1;
 }
-
 .container {
     display: flex;
     align-items: center;
@@ -67,38 +63,51 @@ h1, h2 {
     flex-wrap: wrap;
     gap: 20px;
 }
-
 .profile-image img {
     max-width: 150px;
     border-radius: 10%;
+    filter: drop-shadow(1px 1px 20px #519ce1);
 }
 
-.container-about {
+
+/*About Me */
+.container-about{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    margin-top: 0; /* ขยับลง 5% ของความสูงหน้าจอ */
-    margin-right: 40%; /* ขยับไปทางขวา 10% ของความกว้าง */
+    gap: 20px;
+}
+.about-image {
+    flex: 1;
+    max-width: 45%;
+    text-align: center;
+}
+.about-image img {
+    mix-blend-mode: multiply;
+    width: 100%;
+    max-width: 350px;
+    border-radius: 10px;
+    margin-right: 0%;
+    filter: drop-shadow(1px 1px 20px rgb(28, 28, 28));
+}
+.text-about{
+    margin-right: 10%;
+}
+.text-about h4 {
+    text-align: center;
+    margin-right: auto;
+    font-size: 25px;
+    word-wrap: break-word;
+    line-height: 1;
+    font-weight: bold;
 }
 
-h4 {
-    text-align: center;
-    justify-content: center;
-    margin-right: 55%; /* ขยับไปทางขวา 10% */
-    font-size: 28px; /* ปรับขนาดใหญ่ขึ้น */
-}
+
 .blue-about{
     font-weight: bold;
     color: #519ce1;
 }
-
-.icon-text {
-    font-weight: bold; /* ทำให้ตัวหนังสือหนา */
-    font-size: 15px; /* ปรับขนาด */
-    line-height: 0.5; /* ลดระยะห่างของข้อความ */
-}
-
 .text-motto {
     text-align: center;
     display: flex;
@@ -113,21 +122,20 @@ h4 {
     line-height: 1; /* ลดระยะห่างของข้อความ */
     font-weight: bold;
 }
-.about-image img {
-    max-width: 150px;
-    border-radius: 10%;
-    margin-left: 150%; /* ขยับไปทางขวา */
-    margin-top: -50px; /* ขยับขึ้นบน */
+.icon-text {
+    font-weight: bold; /* ทำให้ตัวหนังสือหนา */
+    font-size: 15px; /* ปรับขนาด */
+    line-height: 0.5; /* ลดระยะห่างของข้อความ */
 }
 
 
+/*Portfolio */
 .portfolio-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
 }
-
 .portfolio-item {
     display: flex;
     flex-direction: column;
@@ -141,17 +149,16 @@ h4 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s, box-shadow 0.2s;
 }
-
 .portfolio-item:hover {
     transform: translateY(-10px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
-
 .portfolio-item img {
     width: 80%;
     height: auto;
     border-radius: 8px;
 }
+
 
 /* Skills Section */
 .skills-grid {
