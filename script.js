@@ -28,4 +28,26 @@ window.onscroll = function () {
 function scrollToTop() {
     window.scrollTo({ top: 0, behavior: "smooth" });
 }
+
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // ป้องกันการส่งฟอร์มปกติ
+    var form = this;
+    fetch(form.action, {
+        method: form.method,
+        body: new FormData(form),
+        headers: {
+            'Accept': 'application/json'
+        }
+    }).then(response => {
+        if (response.ok) {
+            document.getElementById("successMessage").style.display = "block";
+            form.reset(); // รีเซ็ตฟอร์มหลังจากส่งสำเร็จ
+        } else {
+            alert("There was an error. Please try again.");
+        }
+    }).catch(error => {
+        alert("There was an error. Please try again.");
+    });
+});
+
     
