@@ -93,29 +93,29 @@ h1, h2 {
 }
 
 /* Style for hover effect */
-.contact-icon img {
-    width: 50px;
-    height: 50px;
-    transition: transform 0.3s ease-in-out;
-}
+    .contact-icon img {
+        width: 50px;
+        height: 50px;
+        transition: transform 0.3s ease-in-out;
+    }
 
-/* Animation on hover */
-.contact-icon img:hover {
-    animation: hoverEffect 1s infinite alternate;
-}
+    /* Animation on hover */
+    .contact-icon img:hover {
+        animation: hoverEffect 1s infinite alternate;
+    }
 
-/* Keyframes for scaling animation */
-@keyframes hoverEffect {
-    0% {
-        transform: scale(1);
+    /* Keyframes for scaling animation */
+    @keyframes hoverEffect {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(2);
+        }
+        100% {
+            transform: scale(1);
+        }
     }
-    50% {
-        transform: scale(2.5);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
 
 /*About Me */
 .container-about{
@@ -189,16 +189,26 @@ h1, h2 {
     align-items: center;
     text-align: justify;
     max-width: 320px;
-    border: 2px solid #4d55be;
+    border: 2px solid #3b3b3b;
     border-radius: 10px;
     padding: 20px;
     background-color: #f9f9f9;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s, box-shadow 0.2s;
 }
+.portfolio-content p strong {
+    color: #519ce1; 
+    font-weight: bold;
+    font-size: 1em;
+    display: block;      /* เปลี่ยนเป็น block element */
+    margin: 0 auto;      /* จัดให้อยู่ตรงกลาง */
+    text-align: center;  /* จัดเนื้อความภายในให้อยู่ตรงกลาง */
+}
+
+
 .portfolio-item:hover {
     transform: translateY(-10px);
-    filter: drop-shadow(1px 1px 20px #519ce1);
+    filter: drop-shadow(1px 1px 20px #585858);
 }
 .portfolio-item img {
     width: 80%;
@@ -225,7 +235,7 @@ h1, h2 {
 }
 .skill img:hover {
     transform: scale(1.2) rotate(5deg);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    
 }
 
 .contact-form {
