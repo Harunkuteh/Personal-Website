@@ -151,7 +151,7 @@
     <!-- Contact Form -->
 <div class="contact-form">
     <h3>Contact Form</h3>
-    <form id="contactForm" action="https://formspree.io/f/xdkadeoq" method="POST">
+    <form id="contactForm" action="https://formspree.io/f/xdkadeoq" method="post">
         <label for="name">Your Name:</label><br>
         <input type="text" id="name" name="name" required><br><br>
 
@@ -202,40 +202,6 @@
     cursor: pointer;
 }
 </style>
-
-<script>
-document.getElementById("contactForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // ป้องกันการส่งฟอร์มปกติ
-    var form = this;
-    fetch(form.action, {
-        method: form.method,
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-    }).then(response => {
-        if (response.ok) {
-            form.reset(); // รีเซ็ตฟอร์ม
-            document.getElementById("successModal").style.display = "flex"; // แสดง Modal
-        } else {
-            alert("There was an error. Please try again.");
-        }
-    }).catch(error => {
-        alert("There was an error. Please try again.");
-    });
-});
-
-// ปิด Modal เมื่อคลิกปุ่ม ✖
-document.querySelector(".close").addEventListener("click", function() {
-    document.getElementById("successModal").style.display = "none";
-});
-
-// ปิด Modal เมื่อคลิกนอก Modal
-window.addEventListener("click", function(event) {
-    var modal = document.getElementById("successModal");
-    if (event.target === modal) {
-        modal.style.display = "none";
-    }
-});
-</script>
 
 </section>
 
