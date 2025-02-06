@@ -29,25 +29,20 @@ function scrollToTop() {
     window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-    document.querySelector("form").addEventListener("submit", function(event) {
-        event.preventDefault(); // ป้องกันการโหลดหน้าใหม่
+document.querySelector("form").addEventListener("submit", function(event) {
+    event.preventDefault(); // ป้องกันการโหลดซ้ำ
 
-        fetch(this.action, {
-            method: this.method,
-            body: new FormData(this),
-            headers: { 'Accept': 'application/json' }
-        }).then(response => {
-            if (response.ok) {
-                document.querySelector(".contact-form").innerHTML = `
-                    <h3>ขอบคุณ!</h3>
-                    <p>เราจะติดต่อกลับหาคุณเร็วๆ นี้</p>
-                `;
-            } else {
-                alert("เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง");
-            }
-        }).catch(error => {
+    fetch(this.action, {
+        method: this.method,
+        body: new FormData(this),
+        headers: { 'Accept': 'application/json' }
+    }).then(response => {
+        if (response.ok) {
+            window.location.href = "thankyou.html"; // ไปยังหน้าขอบคุณ
+        } else {
             alert("เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง");
-        });
+        }
+    }).catch(error => {
+        alert("เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง");
     });
-
-    
+});
