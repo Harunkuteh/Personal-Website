@@ -17,11 +17,22 @@ header {
     top: 0;
     z-index: 1000;
 }
-@media (max-width: 768px) {
-    .logo a {
-        padding: 20px 20px;  /* เพิ่มระยะห่างบนและล่าง */
-    }
-}
+nav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px; /* ระยะห่างระหว่างไอคอนกับข้อความ */
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 10px 10px;
+    font-size: 1.5em;
+  }
+  
+  nav a img {
+    width: 24px;
+    height: 24px;
+  }
+  
 
 /* ป้องกันไม่ให้ header บัง section */
 section {
@@ -50,7 +61,12 @@ header nav a:hover {
     color: #fff;
     border-radius: 5px;
 }
-h1, h2 {
+h1{
+    font-size: 3em; 
+    text-align: center;
+    margin-left: 10px;
+}
+h2 {
     font-size: 3em; 
     text-align: center;
 }
@@ -117,7 +133,7 @@ h1, h2 {
         transform: scale(1);
     }
     50% {
-        transform: scale(2);
+        transform: scale(1.5);
     }
     100% {
         transform: scale(1);
@@ -126,6 +142,12 @@ h1, h2 {
 
 /* Responsive adjustments for mobile devices */
 @media (max-width: 768px) {
+    
+    h1{
+        font-size: 3em; 
+        text-align: center;
+        margin-left: 10px;
+    }
     .container {
         flex-direction: column;  /* จัดเรียงในแนวตั้ง */
     }
@@ -225,12 +247,11 @@ h1, h2 {
     align-items: center;
     text-align: justify;
     max-width: 320px;
-    border: 2px solid #3b3b3b;
+    border: 2px solid #519ce1;
     border-radius: 10px;
     padding: 20px;
     background-color: #f9f9f9;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 8px #519ce1;
 }
 .portfolio-content p strong {
     color: #519ce1; 
@@ -308,7 +329,7 @@ h1, h2 {
 /* Visitor Counter */
 .visitor-counter {
     position: fixed;
-    top: 10px;
+    top: 20px;
     right: 20px;
     background: #f1c40f;
     color: #000;
@@ -332,18 +353,24 @@ h1, h2 {
     display: none;
 }
 
-/* Responsive design */
-@media (min-width: 768px) {
+/* ปรับการแสดงผลให้พอดีในมือถือ */
+@media (max-width: 768px) {
     header {
-        padding: 10px 50px;
+        padding: 10px;
     }
 
-    .container h1 {
-        font-size: 3em;
+    header .logo h1 {
+        font-size: 1.5em;
     }
 
-    .profile-image img {
-        max-width: 200px;
+    header nav {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    header nav a {
+        font-size: 0.9em;
+        padding: 5px 10px;
     }
 }
 
