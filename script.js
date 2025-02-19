@@ -1,4 +1,4 @@
-// ดึงค่าจำนวนครั้งที่เคยเข้าเว็บจาก localStorage
+// Retrieve the visit count from localStorage
 let visitCount = localStorage.getItem("page_visits");
 
 // ถ้ายังไม่มีค่า ให้ตั้งต้นเป็น 1
