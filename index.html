@@ -15,7 +15,7 @@
             <h1>Harun Kuteh</h1>
         </div>
         <nav>
-            <a href="#home">
+            <a href="#Home">
               <img src="https://img.icons8.com/ios-filled/24/home.png" alt="Home Icon">
               Home
             </a>
@@ -35,7 +35,22 @@
               <img src="https://img.icons8.com/ios-filled/24/phone.png" alt="Contacts Icon">
               Contacts
             </a>
-          </nav>
+            <!-- ปุ่ม Search -->
+<a href="#" id="searchBtn" class="search-button">
+    <img src="https://img.icons8.com/?size=100&id=7695&format=png&color=000000" alt="Search Icon">
+    Search
+</a>
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeSearch">&times;</span>
+        <h2>Search</h2>
+        <input type="text" id="searchInput" placeholder="Type to Search">
+        <button id="searchSubmit">search</button>
+        <div id="searchResults"></div> <!-- ใช้ div เพื่อให้ CSS ทำงานง่ายขึ้น -->
+    </div>
+</div>
+
+        </nav>
           
     </header>
 
@@ -44,7 +59,7 @@
     <button id="goTopBtn" onclick="scrollToTop()">▲</button>
 
     <!-- Section Home -->
-<section id="home">
+<section id="Home">
     <div class="container">
         <div class="profile-image">
             <img src="https://assets.onecompiler.app/433gecjsy/433gebrrc/unnamed.png" alt="Harun Kuteh">
@@ -211,6 +226,7 @@
         <p id="successMessage" style="display:none; color:green;">Your message has been sent successfully!</p>
     </div>
 </section>
+
 <script src="script.js"></script>
 
 </body>
