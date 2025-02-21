@@ -390,7 +390,7 @@ h2 {
 /* โมดอลหน้าค้นหา */
 /* ปรับให้ Modal อยู่ตรงกลาง */
 .modal {
-    display: none; /* ซ่อน Modal ก่อน */
+    display: none; /* Hide modal initially */
     position: fixed;
     z-index: 1000;
     left: 0;
@@ -399,11 +399,12 @@ h2 {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     
-    /* จัดให้อยู่ตรงกลาง */
+    /* Keep modal centered */
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
 
 /* ปรับขนาด & จัดให้อยู่กลางจอ */
 .modal-content {
