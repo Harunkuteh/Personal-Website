@@ -25,31 +25,6 @@ header {
     align-items: center; /* จัดให้อยู่กลางแนวตั้ง */
 }
 
-/* Media Query สำหรับขนาดหน้าจอที่เล็กกว่า 768px */
-@media (max-width: 768px) {
-    .logo {
-        width: 100%; /* ให้ .logo ขยายเต็มความกว้าง */
-        text-align: center; /* จัดข้อความให้อยู่กลาง */
-        margin-top:30; /* ขยับขึ้น 10px */
-    }
-
-    h1 {
-        font-size: 5em; /* ปรับขนาดตัวอักษรให้เหมาะสม */
-    }
-}
-
-/* Media Query สำหรับขนาดหน้าจอที่เล็กกว่า 480px */
-@media (max-width: 480px) {
-    .logo {
-        width: 100%;
-        text-align: center; /* จัดข้อความให้อยู่กลาง */
-    }
-
-    h1 {
-        font-size: 1.8em; /* ปรับขนาดตัวอักษรให้เล็กลงสำหรับหน้าจอที่เล็ก */
-    }
-}
-
 /* Hamburger button (hidden by default) */
 .hamburger {
     display: none; /* ซ่อนในขนาดปกติ */
@@ -68,29 +43,6 @@ header {
     height: 5px;
     background-color: #333;
     border-radius: 5px;
-}
-
-/* Show hamburger on smaller screens */
-@media (max-width: 768px) {
-        h1 {
-            font-size: 2.5em; /* ปรับขนาดตัวอักษรให้เล็กลงเมื่อหน้าจอเป็นมือถือ */
-            text-align: center; /* จัดข้อความให้อยู่กลาง */
-            margin: 0; /* เอามาร์จิ้นออกเพื่อให้ตรงกลาง */
-        }
-    .hamburger {
-        display: flex; /* แสดงบนขนาดหน้าจอ 768px หรือเล็กกว่า */
-    }
-    
-    header nav {
-        display: none; /* ซ่อนเมนู navigation เมื่อใช้ hamburger */
-        flex-direction: column;
-        gap: 10px;
-        width: 100%;
-    }
-
-    header nav.active {
-        display: flex; /* แสดงเมนูเมื่อมีการคลิก hamburger */
-    }
 }
 
 nav a {
@@ -211,41 +163,6 @@ h2 {
     }
     100% {
         transform: scale(1);
-    }
-}
-
-/* Responsive adjustments for mobile devices */
-@media (max-width: 768px) {
-    
-    h1{
-        font-size: 3em; 
-        text-align: center;
-        margin-left: 10px;
-    }
-    .container {
-        flex-direction: column;  
-    }
-    
-    .profile-image img {
-        max-width: 120px;
-    }
-
-    .contact-info {
-        margin-top: 60px;
-        margin-right: 0;  
-    }
-    
-    .contact-info p {
-        font-size: 16px;
-    }
-    
-    .contact-icon img {
-        width: 40px;
-        height: 40px;
-    }
-    
-    .contact-list li {
-        margin: 0 10px;
     }
 }
 
@@ -548,8 +465,41 @@ h2 {
 }
 
 
-/* Mobile Responsive */
 @media (max-width: 768px) {
+    header {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 2.5em; /* ปรับขนาดตัวอักษรให้เล็กลงเมื่อหน้าจอเป็นมือถือ */
+        text-align: center; /* จัดข้อความให้อยู่กลาง */
+        margin: 0; /* เอามาร์จิ้นออกเพื่อให้ตรงกลาง */
+    }
+.hamburger {
+    display: flex; /* แสดงบนขนาดหน้าจอ 768px หรือเล็กกว่า */
+}
+
+header nav {
+    display: none; /* ซ่อนเมนู navigation เมื่อใช้ hamburger */
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+header nav.active {
+    display: flex; /* แสดงเมนูเมื่อมีการคลิก hamburger */
+}
+    header nav a {
+        font-size: 0.9em;
+        padding: 5px 10px;
+    }
+    .logo {
+        width: 100%; /* ให้ .logo ขยายเต็มความกว้าง */
+        text-align: center; /* จัดข้อความให้อยู่กลาง */
+        margin-top:-40px; /* ขยับขึ้น 10px */
+        font-size: 1.3em;
+        margin-right: 70px; /* ขยับไปทางขวาเล็กน้อย */
+    }
     .modal-content {
         width: 90%;
     }
@@ -557,26 +507,30 @@ h2 {
     #searchInput {
         width: 90%;
     }
-}
-
-
-@media (max-width: 768px) {
-    header {
-        padding: 10px;
+    .container {
+        flex-direction: column;  
+    }
+    
+    .profile-image img {
+        max-width: 120px;
     }
 
-    header .logo h1 {
-        font-size: 1.5em;
+    .contact-info {
+        margin-top: 60px;
+        margin-right: 0;  
     }
-
-    header nav {
-        flex-direction: column;
-        gap: 5px;
+    
+    .contact-info p {
+        font-size: 16px;
     }
-
-    header nav a {
-        font-size: 0.9em;
-        padding: 5px 10px;
+    
+    .contact-icon img {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .contact-list li {
+        margin: 0 10px;
     }
 }
 
