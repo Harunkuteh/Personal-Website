@@ -112,8 +112,12 @@ h2 {
     gap: 20px;
 }
 
+.container h1 {
+    font-size: 5em;
+}
+
 .profile-image img {
-    max-width: 100px;
+    max-width: 185px;
     border-radius: 10%;
     filter: drop-shadow(1px 1px 20px #519ce1);
 }
@@ -471,9 +475,12 @@ h2 {
     }
 
     h1 {
-        font-size: 2.5em; /* ปรับขนาดตัวอักษรให้เล็กลงเมื่อหน้าจอเป็นมือถือ */
+        font-size: 0.5em; /* ปรับขนาดตัวอักษรให้เล็กลงเมื่อหน้าจอเป็นมือถือ */
         text-align: center; /* จัดข้อความให้อยู่กลาง */
         margin: 0; /* เอามาร์จิ้นออกเพื่อให้ตรงกลาง */
+    }
+    .text-content h1 {
+        font-size: 2.5em; /* ลดขนาดฟอนต์ลง */
     }
 .hamburger {
     display: flex; /* แสดงบนขนาดหน้าจอ 768px หรือเล็กกว่า */
@@ -534,15 +541,7 @@ header nav.active {
     }
 }
 
-@media (min-width: 1024px) {
-    .container h1 {
-        font-size: 5em;
-    }
 
-    .profile-image img {
-        max-width: 185px;
-    }
-}
 @media (max-width: 480px) {
     header {
         padding: 10px;
