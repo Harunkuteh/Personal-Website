@@ -113,7 +113,7 @@ h2 {
 }
 
 .profile-image img {
-    max-width: 150px;
+    max-width: 100px;
     border-radius: 10%;
     filter: drop-shadow(1px 1px 20px #519ce1);
 }
@@ -540,7 +540,7 @@ header nav.active {
     }
 
     .profile-image img {
-        max-width: 250px;
+        max-width: 185px;
     }
 }
 @media (max-width: 480px) {
