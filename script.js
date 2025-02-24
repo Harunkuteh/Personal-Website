@@ -49,31 +49,63 @@ document.querySelector("form").addEventListener("submit", function(event) {
 
 document.addEventListener("DOMContentLoaded", function () {
     let modal = document.getElementById("searchModal");
+    let searchResults = document.getElementById("searchResults");
+    let searchInput = document.getElementById("searchInput");
 
     // Ensure modal is hidden when page loads
     modal.style.display = "none";  
+    searchResults.innerHTML = ""; // Ensure results are clear on page load
+
+    // Show modal on search button click
+    document.getElementById("searchBtn").addEventListener("click", function () {
+        modal.style.display = "flex";  // Show the modal
+        modal.style.alignItems = "center";
+        modal.style.justifyContent = "center";
+
+        // Clear search input and results on opening the modal
+        searchInput.value = "";
+        searchResults.innerHTML = "";
+    });
+
+    // Close modal on close button click
+    document.getElementById("closeSearch").addEventListener("click", function () {
+        modal.style.display = "none";  // Hide the modal
+    });
+
+    // Close modal if clicked outside
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    };
+
+    // Handle search functionality
+    document.getElementById("searchSubmit").addEventListener("click", function () {
+        let searchQuery = searchInput.value.toLowerCase();
+        let sections = document.querySelectorAll("section"); // Get all sections
+        let found = false;
+
+        // Clear previous results
+        searchResults.innerHTML = "";
+
+        sections.forEach(section => {
+            if (section.innerText.toLowerCase().includes(searchQuery)) {
+                let resultItem = document.createElement("div");  // Create a new div for each result
+                resultItem.innerHTML = `<a href="#${section.id}">${section.querySelector("h2")?.innerText || section.id}</a>`;
+                resultItem.style.margin = "5px 0"; // Add some spacing between results
+                searchResults.appendChild(resultItem); // Append result item to results container
+                found = true;
+            }
+        });
+
+        if (!found) {
+            searchResults.innerHTML = "<div>No results found</div>"; // Show message if no results
+        }
+    });
 });
 
-document.getElementById("searchBtn").addEventListener("click", function () {
-    let modal = document.getElementById("searchModal");
-
-    // Show modal when button is clicked
-    modal.style.display = "flex";
-    modal.style.alignItems = "center";
-    modal.style.justifyContent = "center";
-
-    // Clear search input and results
-    document.getElementById("searchInput").value = "";
-    document.getElementById("searchResults").innerHTML = "";
+// เมื่อคลิก hamburger จะเปิด/ปิดเมนู
+document.getElementById("hamburgerBtn").addEventListener("click", function() {
+    let navMenu = document.querySelector("header nav");
+    navMenu.classList.toggle("active");
 });
-
-document.getElementById("closeSearch").addEventListener("click", function () {
-    document.getElementById("searchModal").style.display = "none";
-});
-
-window.onclick = function (event) {
-    let modal = document.getElementById("searchModal");
-    if (event.target === modal) {
-        modal.style.display = "none";
-    }
-};

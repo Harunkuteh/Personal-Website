@@ -18,6 +18,81 @@ header {
     top: 0;
     z-index: 1000;
 }
+/* ส่วนของ .logo */
+.logo {
+    display: flex;
+    justify-content: center; /* จัดให้อยู่กลางแนวนอน */
+    align-items: center; /* จัดให้อยู่กลางแนวตั้ง */
+}
+
+/* Media Query สำหรับขนาดหน้าจอที่เล็กกว่า 768px */
+@media (max-width: 768px) {
+    .logo {
+        width: 100%; /* ให้ .logo ขยายเต็มความกว้าง */
+        text-align: center; /* จัดข้อความให้อยู่กลาง */
+        margin-top:30; /* ขยับขึ้น 10px */
+    }
+
+    h1 {
+        font-size: 5em; /* ปรับขนาดตัวอักษรให้เหมาะสม */
+    }
+}
+
+/* Media Query สำหรับขนาดหน้าจอที่เล็กกว่า 480px */
+@media (max-width: 480px) {
+    .logo {
+        width: 100%;
+        text-align: center; /* จัดข้อความให้อยู่กลาง */
+    }
+
+    h1 {
+        font-size: 1.8em; /* ปรับขนาดตัวอักษรให้เล็กลงสำหรับหน้าจอที่เล็ก */
+    }
+}
+
+/* Hamburger button (hidden by default) */
+.hamburger {
+    display: none; /* ซ่อนในขนาดปกติ */
+    flex-direction: column;
+    gap: 5px;
+    border: none;
+    background: transparent;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 9999;
+}
+
+/* Style for the hamburger bars */
+.hamburger .bar {
+    width: 30px;
+    height: 5px;
+    background-color: #333;
+    border-radius: 5px;
+}
+
+/* Show hamburger on smaller screens */
+@media (max-width: 768px) {
+        h1 {
+            font-size: 2.5em; /* ปรับขนาดตัวอักษรให้เล็กลงเมื่อหน้าจอเป็นมือถือ */
+            text-align: center; /* จัดข้อความให้อยู่กลาง */
+            margin: 0; /* เอามาร์จิ้นออกเพื่อให้ตรงกลาง */
+        }
+    .hamburger {
+        display: flex; /* แสดงบนขนาดหน้าจอ 768px หรือเล็กกว่า */
+    }
+    
+    header nav {
+        display: none; /* ซ่อนเมนู navigation เมื่อใช้ hamburger */
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    header nav.active {
+        display: flex; /* แสดงเมนูเมื่อมีการคลิก hamburger */
+    }
+}
+
 nav a {
     display: inline-flex;
     align-items: center;
