@@ -109,3 +109,13 @@ document.getElementById("hamburgerBtn").addEventListener("click", function() {
     let navMenu = document.querySelector("header nav");
     navMenu.classList.toggle("active");
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const popularItems = document.querySelectorAll('.popular-item');
+    
+    // ตัวอย่างการเปลี่ยนแปลงเนื้อหาหลังจากโหลด
+    popularItems.forEach((item, index) => {
+        item.querySelector('p').innerText = `Updated Description for Item ${index + 1}`;
+    });
+});
