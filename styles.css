@@ -562,39 +562,241 @@ header nav.active {
     }
 }
 
-#most-popular {
-    padding: 20px;
-    background-color: #f4f4f4;
-}
-
-#most-popular h2 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.popular-items {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+/* การแสดงช่องแบบ Flex และการจัดตำแหน่งให้สวยงาม */
+#popularResults {
+    display: flex;
+    justify-content: space-between;
     gap: 20px;
-    justify-items: center;
+    flex-wrap: wrap; /* ให้ช่องย้ายลงบรรทัดถ้าพื้นที่ไม่พอ */
+    margin: 20px 0;
 }
 
-.popular-item {
-    text-align: center;
-    background-color: #fff;
-    padding: 15px;
+/* การจัดเรียงการแสดงผลแบบ grid */
+.popular-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 คอลัมน์สำหรับจอใหญ่ */
+    gap: 20px;
+    margin-top: 20px;
+    max-width: 1200px; /* กำหนดความกว้างสูงสุด */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ปรับแต่งให้แต่ละการ์ดเป็นขนาดที่เหมาะสม */
+.popular-section {
+    flex: 1;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 160px; /* ปรับความสูง */
+    transition: all 0.3s ease;
+    cursor: pointer;
+    color: white;
 }
 
-.popular-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
+/* สีของอันดับ Top */
+.popular-section:nth-child(1) { background-color: #d4af37; } /* สีทอง */
+.popular-section:nth-child(2) { background-color: #c0c0c0; } /* สีเงิน */
+.popular-section:nth-child(3) { background-color: #9f7a34; } /* สีบรอนซ์ */
+
+
+/* การเปลี่ยนสีพื้นหลังเมื่อ hover */
+.popular-section:hover {
+    transform: translateY(-5px); /* ยกช่องขึ้นเล็กน้อย */
+    box-shadow: 0 8px 20px #519ce1;  /* เปลี่ยนสีเงา */
 }
 
-.popular-item p {
-    font-size: 14px;
-    color: #333;
+/* ปรับแต่งอันดับ (Top 1, 2, 3) ให้อยู่ในกรอบเล็กๆ ที่มุมซ้ายบน */
+.popular-section .rank {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #519ce1;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 100px;
+    font-weight: bold;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+/* ปรับลิงก์ภายในแต่ละ card */
+.popular-section a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #ffffff;
+    display: block;
+    margin-top: 30px; /* เว้นที่ให้อันดับ */
+    font-size: 1.2em;
+}
+
+/* เพิ่มจำนวนผู้ชม */
+.popular-section .views {
     margin-top: 10px;
+    font-size: 1.2em;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* การจัดเรียงการแสดงผลแบบ grid */
+.popular-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 คอลัมน์ */
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* ปรับขนาดการแสดงผลเมื่อหน้าจอเล็กลง */
+@media (max-width: 768px) {
+    .popular-container {
+        grid-template-columns: 1fr 1fr; /* แสดงเป็น 2 คอลัมน์ */
+    }
+}
+
+@media (max-width: 480px) {
+    .popular-container {
+        grid-template-columns: 1fr; /* แสดงเป็น 1 คอลัมน์ */
+    }
+}
+
+
+
+
+/* การปรับแต่งข้อความที่อยู่ข้างๆ จำนวนผู้เยี่ยมชม */
+#about p {
+    font-size: 0.8em;
+    color: #333; /* สีตัวอักษรเป็นสีดำ */
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-family: 'Arial', sans-serif; /* เปลี่ยนฟอนต์ */
+}
+/* การปรับแต่งข้อความของจำนวนผู้เยี่ยมชม */
+#about-visitors {
+    font-size: 1em; /* ปรับขนาดตัวอักษร */
+    color: #ffffff; /* สีตัวอักษรเป็นสีขาว */
+    background-color: #519ce1; /* สีพื้นหลังเป็นสีฟ้า */
+    padding: 5px 10px; /* เพิ่มพื้นที่รอบๆ ตัวอักษร */
+    border-radius: 5px; /* มุมโค้ง */
+    font-weight: bold; /* ทำให้ข้อความหนาขึ้น */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* เงาเบาๆ */
+    transition: background-color 0.3s ease; /* เพิ่มการเปลี่ยนสีพื้นหลังเมื่อ hover */
+}
+
+/* การเปลี่ยนสีพื้นหลังเมื่อ hover */
+#about-visitors:hover {
+    background-color: #4176b1; /* เปลี่ยนเป็นสีฟ้าเข้มเมื่อ hover */
+}
+
+/* ปรับแต่งข้อความ Visitors */
+#home p {
+    font-size: 0.8em;
+    color: #333;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 10px;
+}
+
+/* ปรับแต่งตัวเลข Visitors Counter */
+#home-visitors {
+    font-size: 1em; /* ขยายตัวอักษรให้ใหญ่ */
+    color: #ffffff; /* สีตัวอักษร */
+    background-color: #519ce1; /* สีพื้นหลังฟ้า */
+    padding: 5px 10px; /* ระยะห่างรอบตัวเลข */
+    border-radius: 5px; /* มุมโค้ง */
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* เพิ่มเงา */
+    transition: all 0.3s ease;
+}
+
+/* เพิ่มเอฟเฟกต์เมื่อ Hover */
+#home-visitors:hover {
+    background-color: #4176b1; /* เปลี่ยนเป็นฟ้าเข้มเมื่อ hover */
+    transform: scale(1.1); /* ขยายขนาดขึ้นเล็กน้อย */
+}
+
+/* ปรับแต่งข้อความ Visitors */
+#portfolio p {
+    font-size: 0.8em;
+    color: #333;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 10px;
+}
+
+/* ปรับแต่งตัวเลข Visitors Counter */
+#portfolio-visitors {
+    font-size: 1em; /* ขยายตัวอักษรให้ใหญ่ */
+    color: #ffffff; /* สีตัวอักษร */
+    background-color: #519ce1; /* สีพื้นหลังฟ้า */
+    padding: 5px 10px; /* ระยะห่างรอบตัวเลข */
+    border-radius: 5px; /* มุมโค้ง */
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* เพิ่มเงา */
+    transition: all 0.3s ease;
+}
+
+/* เพิ่มเอฟเฟกต์เมื่อ Hover */
+#portfolio-visitors:hover {
+    background-color: #4176b1; /* เปลี่ยนเป็นฟ้าเข้มเมื่อ hover */
+    transform: scale(1.1); /* ขยายขนาดขึ้นเล็กน้อย */
+}
+
+/* ปรับแต่งข้อความ Visitors */
+#skills p {
+    font-size: 0.8em;
+    color: #333;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 10px;
+}
+
+/* ปรับแต่งตัวเลข Visitors Counter */
+#skills-visitors {
+    font-size: 1em; /* ขยายตัวอักษรให้ใหญ่ */
+    color: #ffffff; /* สีตัวอักษร */
+    background-color: #519ce1; /* สีพื้นหลังฟ้า */
+    padding: 5px 10px; /* ระยะห่างรอบตัวเลข */
+    border-radius: 5px; /* มุมโค้ง */
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* เพิ่มเงา */
+    transition: all 0.3s ease;
+}
+
+/* เพิ่มเอฟเฟกต์เมื่อ Hover */
+#skills-visitors:hover {
+    background-color: #4176b1; /* เปลี่ยนเป็นฟ้าเข้มเมื่อ hover */
+    transform: scale(1.1); /* ขยายขนาดขึ้นเล็กน้อย */
+}
+
+/* ปรับแต่งข้อความ Visitors */
+#contacts p {
+    font-size: 0.8em;
+    color: #333;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 10px;
+}
+
+/* ปรับแต่งตัวเลข Visitors Counter */
+#contacts-visitors {
+    font-size: 1em; /* ขยายตัวอักษรให้ใหญ่ */
+    color: #ffffff; /* สีตัวอักษร */
+    background-color: #519ce1; /* สีพื้นหลังฟ้า */
+    padding: 5px 10px; /* ระยะห่างรอบตัวเลข */
+    border-radius: 5px; /* มุมโค้ง */
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* เพิ่มเงา */
+    transition: all 0.3s ease;
+}
+
+/* เพิ่มเอฟเฟกต์เมื่อ Hover */
+#contacts-visitors:hover {
+    background-color: #4176b1; /* เปลี่ยนเป็นฟ้าเข้มเมื่อ hover */
+    transform: scale(1.1); /* ขยายขนาดขึ้นเล็กน้อย */
 }

@@ -119,3 +119,119 @@ document.addEventListener('DOMContentLoaded', function() {
         item.querySelector('p').innerText = `Updated Description for Item ${index + 1}`;
     });
 });
+
+// ฟังก์ชันเพิ่มจำนวนผู้ชมในแต่ละ section
+function updateVisitorCount(sectionId) {
+    let visitors = localStorage.getItem(sectionId);
+    visitors = visitors ? parseInt(visitors) : 0;
+    visitors += 1;
+    localStorage.setItem(sectionId, visitors);
+    document.getElementById(`${sectionId}-visitors`).textContent = visitors;
+}
+
+// ฟังก์ชันติดตามการเข้าชม
+function setupVisitorTracking() {
+    const links = document.querySelectorAll('nav a');
+    links.forEach(link => {
+        link.addEventListener('click', function () {
+            const sectionId = link.getAttribute('href').substring(1);
+            updateVisitorCount(sectionId);
+        });
+    });
+}
+
+// ฟังก์ชันดึงข้อมูล Section ที่มีคนดูมากที่สุด
+function getMostPopularSection() {
+    const sections = ["home", "about", "portfolio", "skills", "contact"];
+    let mostPopular = { id: null, views: 0 };
+
+    sections.forEach(section => {
+        let views = localStorage.getItem(section) ? parseInt(localStorage.getItem(section)) : 0;
+        if (views > mostPopular.views) {
+            mostPopular.id = section;
+            mostPopular.views = views;
+        }
+    });
+
+    return mostPopular;
+}
+
+// ฟังก์ชันดึง 3 อันดับแรกของ Section ที่มีคนดูมากที่สุด
+function getTopThreePopularSections() {
+    let sections = ["home", "about", "portfolio", "skills", "contact"];
+    let sectionViews = [];
+
+    // ดึงข้อมูลจาก localStorage และเก็บใน array
+    sections.forEach(section => {
+        let views = localStorage.getItem(section) ? parseInt(localStorage.getItem(section)) : 0;
+        sectionViews.push({ id: section, views: views });
+    });
+
+    // เรียงลำดับจากมากไปน้อย
+    sectionViews.sort((a, b) => b.views - a.views);
+    
+    // เอาแค่ 3 อันดับแรก
+    return sectionViews.slice(0, 3);
+}
+
+
+// ฟังก์ชันแสดง 3 อันดับยอดนิยม
+function showMostPopular() {
+    let topSections = getTopThreePopularSections(); // ฟังก์ชันที่ดึงข้อมูล 3 อันดับ
+    let popularResults = document.getElementById("popularResults");
+
+    // ตรวจสอบว่ามีข้อมูลหรือไม่
+    if (topSections.length > 0 && topSections[0].views > 0) {
+        popularResults.innerHTML = topSections.map((section, index) =>
+            `<div class="popular-section">
+                <div class="rank">${index + 1}</div>
+                <a href="#${section.id}" onclick="scrollToSection('${section.id}')">
+                    ${section.id.toUpperCase()}
+                </a>
+                <div class="views">${section.views} views</div>
+            </div>`
+        ).join("");
+    } else {
+        popularResults.innerHTML = "ยังไม่มีข้อมูลการเข้าชม";
+    }
+}
+
+
+
+// ฟังก์ชันเลื่อนหน้าไปยัง Section ที่คลิก
+function scrollToSection(sectionId) {
+    let section = document.getElementById(sectionId);
+    if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+    }
+}
+
+// โหลดข้อมูล The Most Popular เมื่อหน้าเว็บโหลด
+document.addEventListener('DOMContentLoaded', function () {
+    setupVisitorTracking();
+    ["home", "about", "portfolio", "skills", "contacts"].forEach(updateVisitorCount);
+    
+    // แสดง The Most Popular
+    showMostPopular();
+});
+
+
+// เปิด Modal เมื่อคลิกปุ่ม "The Most Popular"
+document.getElementById("popularBtn").addEventListener("click", function() {
+    document.getElementById("popularModal").style.display = "flex";
+    showMostPopular();
+});
+
+// ปิด Modal
+document.getElementById("closePopular").addEventListener("click", function() {
+    document.getElementById("popularModal").style.display = "none";
+});
+
+// ปิด Modal เมื่อคลิกข้างนอก
+window.onclick = function(event) {
+    let modal = document.getElementById("popularModal");
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+};
+

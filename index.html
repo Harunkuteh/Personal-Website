@@ -22,7 +22,22 @@
             <h1>Harun Kuteh</h1>
         </div>
         <nav>
-            <a href="#Home">
+
+<!-- ปุ่ม The Most Popular -->
+<a href="#" id="popularBtn" class="popular-button">
+    <img src="https://img.icons8.com/?size=100&id=120664&format=png&color=000000" alt="Search Icon">
+    The Most Popular</a>
+  <!-- Modal สำหรับแสดง The Most Popular -->
+  <div id="popularModal" class="modal">
+      <div class="modal-content">
+          <span class="close" id="closePopular">&times;</span>
+          <h2><span class="black-text">The Most</span> <span class="blue-text">Popular</span></h2>
+          <div id="popularResults">กำลังโหลด...</div> <!-- แสดงข้อมูล Section ยอดนิยม -->
+      </div>
+  </div>
+       
+
+            <a href="#home">
               <img src="https://img.icons8.com/ios-filled/24/home.png" alt="Home Icon">
               Home
             </a>
@@ -42,6 +57,9 @@
               <img src="https://img.icons8.com/ios-filled/24/phone.png" alt="Contacts Icon">
               Contacts
             </a>
+
+    
+
             <!-- ปุ่ม Search -->
 <a href="#" id="searchBtn" class="search-button">
     <img src="https://img.icons8.com/?size=100&id=7695&format=png&color=000000" alt="Search Icon">
@@ -65,8 +83,12 @@
 
     <button id="goTopBtn" onclick="scrollToTop()">▲</button>
 
+    
+
+
     <!-- Section Home -->
-<section id="Home">
+<section id="home">
+    <p>Visitors: <span id="home-visitors">0</span></p>
     <div class="container">
         <div class="profile-image">
             <img src="https://assets.onecompiler.app/433gecjsy/433gebrrc/unnamed.png" alt="Harun Kuteh">
@@ -105,6 +127,7 @@
 
     <!-- Section About -->
     <section id="about">
+        <p>Visitors: <span id="about-visitors">0</span></p>
         <h2><span class="black-text">About</span><span class="blue-text"> Me</span></h2>
         <div class="container-about">
             <div class="about-image"> 
@@ -133,6 +156,7 @@
 
    <!-- Section Portfolio -->
 <section id="portfolio">
+    <p>Visitors: <span id="portfolio-visitors">0</span></p>
     <h2><span class="black-text">Port</span><span class="blue-text">folio</span></h2>
     
     <div class="portfolio-grid">
@@ -165,6 +189,7 @@
 
     <!-- Section Skills -->
     <section id="skills">
+        <p>Visitors: <span id="skills-visitors">0</span></p>
         <h2><span class="black-text">My</span><span class="blue-text"> Skills</span></h2>
         <div class="skills-grid">
             
@@ -211,34 +236,10 @@
         </div>
     </section>
 
-    <!-- Section Most Popular -->
-<section id="most-popular">
-    <h2><span class="black-text">Most</span><span class="blue-text"> Popular</span></h2>
-    
-    <div class="popular-items">
-        <div class="popular-item">
-            <img src="https://via.placeholder.com/300" alt="Popular Item 1">
-            <p><strong>Item 1</strong></p>
-            <p>Description of the most popular item 1.</p>
-        </div>
-
-        <div class="popular-item">
-            <img src="https://via.placeholder.com/300" alt="Popular Item 2">
-            <p><strong>Item 2</strong></p>
-            <p>Description of the most popular item 2.</p>
-        </div>
-
-        <div class="popular-item">
-            <img src="https://via.placeholder.com/300" alt="Popular Item 3">
-            <p><strong>Item 3</strong></p>
-            <p>Description of the most popular item 3.</p>
-        </div>
-    </div>
-</section>
-
-   
+ 
   <!-- Section Contacts -->
 <section id="contacts">
+    <p>Visitors: <span id="contacts-visitors">0</span></p>
     <h2><span class="black-text">Contact</span><span class="blue-text"> Me</span></h2>
 
     <!-- Contact Form (Optional) -->
